@@ -78,6 +78,9 @@
   /* ---------- HERO ---------- */
   .hero{
     padding:168px 0 100px;
+    position: relative;
+  }
+  .hero .wrap {
     display:grid; grid-template-columns:1.05fr 1fr; gap:56px; align-items:center;
   }
   .eyebrow{
@@ -263,12 +266,14 @@
   /* Tablet / small laptop: tighten hero + spacing, keep 2-col grid a bit longer */
   @media (max-width:1024px){
     .wrap{ padding:0 20px; }
-    .hero{ gap:36px; padding-top:150px; }
+    .hero{ padding-top:150px; }
+    .hero .wrap { gap:36px; }
   }
 
   /* Tablet portrait / large phone: stack hero, collapse nav into hamburger */
   @media (max-width:860px){
-    .hero{ grid-template-columns:1fr; padding-top:130px; }
+    .hero{ padding-top:130px; }
+    .hero .wrap { grid-template-columns:1fr; }
     .cmd-row{ grid-template-columns:1fr; gap:8px; }
     .log-row{ grid-template-columns:1fr; gap:6px; }
     .badges{ grid-template-columns:repeat(2,1fr); }
@@ -451,7 +456,7 @@
     <circle class="circuit-node" cx="1000" cy="160" r="4"/>
     <circle class="circuit-node" cx="1040" cy="460" r="4"/>
   </svg>
-  <div class="wrap" style="display:contents;">
+  <div class="wrap">
     <div>
       <div class="eyebrow">
         <svg class="ping" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
